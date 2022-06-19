@@ -1,12 +1,10 @@
 import { createStore } from 'vuex'
+import grid from "./modules/grid";
+import gridOptions from "./modules/gridOptions";
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    grid,
+    gridOptions
   }
 })
