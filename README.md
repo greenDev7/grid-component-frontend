@@ -19,4 +19,4 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Описание проекта
-See [Статья на хабре](https://habr.com/ru/sandbox/edit/172334/).
+[Статья на хабре](https://habr.com/ru/sandbox/edit/172334/).
