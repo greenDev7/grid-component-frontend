@@ -105,7 +105,7 @@ export default {
                 },
                 {
                     type: "checkbox",
-                    name: "isActive",
+                    name: "inArchive",
                     caption: "В архиве",
                     width: "180px",
                     padding: "0px",
@@ -126,6 +126,20 @@ export default {
             allowPaging: true,
             allowFiltering: true,
         },
+    },
+    mutations: {
+        enableFiltering(state, allowFiltering) {
+            state.behaviorOptions.allowFiltering = allowFiltering;
+        },
+        enableMultipleSelection(state, allowMultipleSelection) {
+            state.behaviorOptions.allowMultipleSelection = allowMultipleSelection;
+        },
+        enableSelectAll(state, allowSelectAll) {
+            state.behaviorOptions.allowSelectAll = allowSelectAll;
+        },
+        enablePaging(state, allowPaging) {
+            state.behaviorOptions.allowPaging = allowPaging;
+        }
     },
     getters: {
         getCommonTableOptions(state) {
