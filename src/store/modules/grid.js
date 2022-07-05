@@ -60,7 +60,8 @@ export default {
     state: {
         dataGridRows: [],
         dataGridRowsCount: null,
-        dataSourceUri: "http://127.0.0.1:3000/documents/findPaginated",
+        // dataSourceUri: "http://127.0.0.1:3000/documents/findPaginated", // Получаем данные от локального сервера
+        dataSourceUri: "https://ydr7yx.sse.codesandbox.io/documents/findPaginated", // Получаем данные от сервера песочницы с backend-приложением
         sorting: {
             sortColumn: "createdOn",
             sortDirection: "DESC",
