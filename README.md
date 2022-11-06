@@ -19,7 +19,7 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Описание проекта
-[Статья на хабре](https://habr.com/ru/sandbox/edit/172334/).
+[Статья на хабре](https://habr.com/ru/post/676622/).
 
 ### Песочницы
 [Frontend](https://codesandbox.io/s/grid-component-frontend-ib6rqm)
