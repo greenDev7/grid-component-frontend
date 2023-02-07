@@ -19,13 +19,22 @@ export default {
                 .post(state.dataSourceUri, requestBody)
                 .then((response) => {
 
+
+                    console.log('process.env.VUE_APP_BACKEND_APP_URL: ', process.env.VUE_APP_BACKEND_APP_URL);
+                    console.log('process.env.VUE_APP_BACKEND_APP_PORT: ', process.env.VUE_APP_BACKEND_APP_PORT);
+
                     dataGridRows = response.data.documents;
                     dataGridRowsCount = response.data.count;
 
                     commit('refreshDataGridRows', dataGridRows);
                     commit('updateDataGridRowsCount', dataGridRowsCount);
                 })
-                .catch((error) => console.log('Случилось что-то очень нехорошее при загрузке данных:', error));
+                .catch((error) => {
+                    console.log('process.env.VUE_APP_BACKEND_APP_URL: ', process.env.VUE_APP_BACKEND_APP_URL);
+                    console.log('process.env.VUE_APP_BACKEND_APP_PORT: ', process.env.VUE_APP_BACKEND_APP_PORT);
+                    console.log('Случилось что-то очень нехорошее при загрузке данных:', error)
+                }
+                );
         }
     },
     mutations: {
@@ -60,8 +69,8 @@ export default {
     state: {
         dataGridRows: [],
         dataGridRowsCount: null,
-        // dataSourceUri: "http://127.0.0.1:3000/documents/findPaginated", // Получаем данные от локального сервера
-        dataSourceUri: "https://ydr7yx.sse.codesandbox.io/documents/findPaginated", // Получаем данные от сервера песочницы с backend-приложением
+        dataSourceUri: `http://${process.env.VUE_APP_BACKEND_APP_URL}:${process.env.VUE_APP_BACKEND_APP_PORT}/documents/findPaginated`, // Получаем данные от локального сервера
+        // dataSourceUri: "https://ydr7yx.sse.codesandbox.io/documents/findPaginated", // Получаем данные от сервера песочницы с backend-приложением
         sorting: {
             sortColumn: "createdOn",
             sortDirection: "DESC",
