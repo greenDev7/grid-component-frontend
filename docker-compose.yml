@@ -1,0 +1,18 @@
+services:
+  grid-component-frontend:
+    image: 091293azs/grid-component-frontend-nginx-envs
+    working_dir: /grid-component-frontend    
+    ports:
+      - 8080:80    
+    environment:
+      VUE_APP_BACKEND_APP_URL: 127.0.0.1
+      VUE_APP_BACKEND_APP_PORT: 3000
+    entrypoint: ["/entrypoint.sh"]
+    command: ["nginx", "-g", "daemon off;"]
+
+  grid-component-backend:
+    image: 091293azs/grid-component-backend
+    working_dir: /grid-component-backend
+    ports:
+      - 3000:3000 
+    command: npm run start:dev
