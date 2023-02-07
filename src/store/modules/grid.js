@@ -18,11 +18,6 @@ export default {
             await axios
                 .post(state.dataSourceUri, requestBody)
                 .then((response) => {
-
-
-                    console.log('process.env.VUE_APP_BACKEND_APP_URL: ', process.env.VUE_APP_BACKEND_APP_URL);
-                    console.log('process.env.VUE_APP_BACKEND_APP_PORT: ', process.env.VUE_APP_BACKEND_APP_PORT);
-
                     dataGridRows = response.data.documents;
                     dataGridRowsCount = response.data.count;
 

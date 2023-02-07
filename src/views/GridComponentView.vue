@@ -96,6 +96,19 @@ export default {
       this.selectedIds = selectedRows.join(", ");
     },
   },
+
+  async mounted() {
+    console.log(
+      "process.env.VUE_APP_BACKEND_APP_URL: ",
+      process.env.VUE_APP_BACKEND_APP_URL
+    );
+    console.log(
+      "process.env.VUE_APP_BACKEND_APP_PORT: ",
+      process.env.VUE_APP_BACKEND_APP_PORT
+    );
+
+    console.log("process.env: ", process.env);
+  },
 };
 </script>
 
