@@ -1,4 +1,5 @@
 import axios from "axios";
+import { backendAppUrl, backendAppPort } from '../../../global.config'
 
 export default {
     actions: {
@@ -19,6 +20,8 @@ export default {
                 .post(state.dataSourceUri, requestBody)
                 .then((response) => {
 
+                    console.log('url = ', backendAppUrl);
+                    console.log('port = ', backendAppPort);
                     dataGridRows = response.data.documents;
                     dataGridRowsCount = response.data.count;
 
@@ -60,8 +63,8 @@ export default {
     state: {
         dataGridRows: [],
         dataGridRowsCount: null,
-        // dataSourceUri: "http://127.0.0.1:3000/documents/findPaginated", // Получаем данные от локального сервера
-        dataSourceUri: "https://ydr7yx.sse.codesandbox.io/documents/findPaginated", // Получаем данные от сервера песочницы с backend-приложением
+        dataSourceUri: `http://${backendAppUrl}:${backendAppPort}/documents/findPaginated`, // Получаем данные от локального сервера
+        // dataSourceUri: "https://ydr7yx.sse.codesandbox.io/documents/findPaginated", // Получаем данные от сервера песочницы с backend-приложением
         sorting: {
             sortColumn: "createdOn",
             sortDirection: "DESC",
