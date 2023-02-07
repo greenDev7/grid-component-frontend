@@ -2,39 +2,43 @@
   <table>
     <tbody>
       <tr>
-        <td id="select-container">
-          <select v-model="pageSize" @change="$emit('pagingDataChanged')">
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-          </select>
-        </td>
-        <td id="total-row-count-container">
-          <span class="pointer">({{ totalRowCount }})</span>
-        </td>
-        <td id="first-page-container">
-          <span class="pointer" @click="goToTheFirstPage()">&Lt;</span>
-        </td>
-        <td id="previous-page-container">
-          <span class="pointer" @click="goToThePreviousPage()"> &lt;</span>
-        </td>
-        <td id="current-page-container">
-          <input
-            type="text"
-            v-model="pageNumber"
-            @keyup.enter="onPageNumberKeyUpEnter()"
-          />
-        </td>
-        <td id="total-page-count-container">
-          из
-          <span class="pointer" @click="goToTheLastPage()">{{
-            totalPageCount
-          }}</span>
-        </td>
-        <td id="next-page-container">
-          <span class="pointer" @click="goToTheNextPage()">&gt;</span>
-        </td>
+        <span style="float: left;">
+          <td id="select-container">
+            <select v-model="pageSize" @change="$emit('pagingDataChanged')">
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+            </select>
+          </td>
+          <td id="total-row-count-container">
+            <span>({{ totalRowCount }})</span>
+          </td>
+        </span>        
+        <span style="float: right;">
+          <td id="first-page-container">
+            <span class="pointer" @click="goToTheFirstPage()">&Lt;</span>
+          </td>
+          <td id="previous-page-container">
+            <span class="pointer" @click="goToThePreviousPage()"> &lt;</span>
+          </td>
+          <td id="current-page-container">
+            <input
+              type="text"
+              v-model="pageNumber"
+              @keyup.enter="onPageNumberKeyUpEnter()"
+            />
+          </td>
+          <td id="total-page-count-container">
+            из
+            <span class="pointer" @click="goToTheLastPage()">{{
+              totalPageCount
+            }}</span>
+          </td>
+          <td id="next-page-container">
+            <span class="pointer" @click="goToTheNextPage()">&gt;</span>
+          </td>
+        </span>
       </tr>
     </tbody>
   </table>
