@@ -243,7 +243,8 @@ export default {
 
     getNormalDate(value) {
       if (value) {
-        return value.split(".000Z")[0]; // Преобразуем дату для вывода в грид
+        //console.log(value);
+        return value.split(".")[0]; // Преобразуем дату для вывода в грид
       }
     },
 
